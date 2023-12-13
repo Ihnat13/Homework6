@@ -14,11 +14,11 @@ if (userInput === null) {
     const userArray = userInput.split(`,`);
     let sumUserArray = 0;
 
-    if (checkSpacesInArr(userArray)) {
+    if (isValidUserInput(userArray)) {
         for (let i = 0; i < userArray.length; i++) {
-            const currentNum = parseFloat(userArray[i], 10);
-            if (!isNaN(currentNum)) {
-                sumUserArray += currentNum;
+            const currentValidNum = parseFloat(userArray[i], 10);
+            if (!isNaN(currentValidNum)) {
+                sumUserArray += currentValidNum;
             }
         }
         alert(sumUserArray);
@@ -26,7 +26,7 @@ if (userInput === null) {
 
 }
 
-function checkSpacesInArr(userArray) {
+function isValidUserInput(userArray) {
     for (let i = 0; i < userArray.length; i++) {
         const checkCurrentNum = userArray[i].trim();
         if (checkCurrentNum === '') {
